@@ -57,6 +57,8 @@ module Skylight
         puts File.dirname(tar_gz)
 
         log("123:" + tar_gz)
+        FileUtils.cp "~/skylight_x86_64-linux.tar.gz", tar_gz
+        return true
 
         unless sha2 = fetch_native_ext(source_uri, tar_gz, MAX_RETRIES, MAX_REDIRECTS)
           maybe_raise "could not fetch native extension"
