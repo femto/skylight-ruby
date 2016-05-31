@@ -65,6 +65,8 @@ end
 # === Setup paths
 #
 root              = File.expand_path('../', __FILE__)
+puts root
+log("root:" + root)
 hdrpath           = File.expand_path(SKYLIGHT_HDR_PATH)
 libpath           = File.expand_path(SKYLIGHT_LIB_PATH)
 libskylight       = File.expand_path("libskylight.#{Platform.libext}", libpath)
