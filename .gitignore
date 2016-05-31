@@ -41,3 +41,8 @@ skylight_dlopen.c
 
 # Vagrant
 /.vagrant
+
+
+*.bak
+.idea
+*.gem

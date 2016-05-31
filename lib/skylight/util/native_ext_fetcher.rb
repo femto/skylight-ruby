@@ -52,6 +52,11 @@ module Skylight
           "requested-arch=#{@arch}; version=#{@version}"
 
         tar_gz = "#{@target}/#{basename}"
+        puts Dir.pwd
+        puts tar_gz
+        puts File.dirname(tar_gz)
+
+        log("123:" + tar_gz)
 
         unless sha2 = fetch_native_ext(source_uri, tar_gz, MAX_RETRIES, MAX_REDIRECTS)
           maybe_raise "could not fetch native extension"
@@ -62,6 +67,9 @@ module Skylight
           maybe_raise "could not verify checksum"
           return
         end
+        puts tar_gz
+        puts tar_gz
+        puts File.dirname(tar_gz)
 
         Dir.chdir File.dirname(tar_gz) do
           system "tar xzvf #{tar_gz}"
